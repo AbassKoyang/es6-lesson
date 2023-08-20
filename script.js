@@ -141,22 +141,27 @@ const addressDescription = document.getElementById('address');
 const hobbyDescription = document.getElementById('hobby');
 
 const getData = (nameValue, ageValue, occupationValue, addressValue, hobbyValue) =>{
-    const name = document.createTextNode(`${nameValue}`);
-    const age = document.createTextNode(`${ageValue} Years`);
-    const occupation = document.createTextNode(`${occupationValue}`);
-    const address = document.createTextNode(`${addressValue}`);
-    const hobby = document.createTextNode(`${hobbyValue}`);
-    nameDescription.appendChild(name)
-    ageDescription.appendChild(age)
-    occupationDescription.appendChild(occupation)
-    addressDescription.appendChild(address)
-    hobbyDescription.appendChild(hobby)
+    // const name = document.createTextNode(`${nameValue}`);
+    let data = {
+        name: document.createTextNode(`${nameValue}`),
+        age: document.createTextNode(`${ageValue} Years`),
+        occupation: document.createTextNode(`${occupationValue}`),
+        address: document.createTextNode(`${addressValue}`),
+        hobby: document.createTextNode(`${hobbyValue}`),
+    }
+
+    nameDescription.appendChild(data.name)
+    ageDescription.appendChild(data.age)
+    occupationDescription.appendChild(data.occupation)
+    addressDescription.appendChild(data.address)
+    hobbyDescription.appendChild(data.hobby)
 }
 
 submit.addEventListener('click', (e)=>{
     getData(nameInput.value, ageInput.value, occupationInput.value, addressInput.value, hobbyInput.value)
 }
 );
+
 
 
 
